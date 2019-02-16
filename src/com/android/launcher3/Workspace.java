@@ -58,7 +58,7 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.Toast;
 
-import com.android.internal.util.aospextended.AEXUtils;
+import com.android.internal.util.legion.LegionUtils;
 
 import com.android.launcher3.Launcher.LauncherOverlay;
 import com.android.launcher3.LauncherAppWidgetHost.ProviderChangedListener;
@@ -328,10 +328,10 @@ public class Workspace extends PagedView<WorkspacePageIndicator>
             case 0: // Stock
                 break;
             case 1: // Screen off
-                AEXUtils.switchScreenOff(getContext());
+                BeastUtils.switchScreenOff(getContext());
                 break;
             case 2: // Flashlight
-                AEXUtils.toggleCameraFlash();
+                BeastUtils.toggleCameraFlash();
                 break;
             case 3: // Google search
                 launchGoogleSearch(getContext());

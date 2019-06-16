@@ -71,6 +71,7 @@ public abstract class BaseDraggingActivity extends BaseActivity
     private DisplayRotationListener mRotationListener;
 	
     private UiModeManager mUiModeManager;
+    protected int mThemeStyle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,12 +99,18 @@ public abstract class BaseDraggingActivity extends BaseActivity
     }
 
     protected int getThemeRes(WallpaperColorInfo wallpaperColorInfo) {
-        if (wallpaperColorInfo.isDark()) {
-            return wallpaperColorInfo.supportsDarkText() ?
-                    R.style.AppTheme_Dark_DarkText : R.style.AppTheme_Dark;
+        if (mThemeStyle == 1) {
+            return R.style.LauncherTheme;
+        } else if (mThemeStyle == 2) {
+            return R.style.AppTheme_Dark;
         } else {
-            return wallpaperColorInfo.supportsDarkText() ?
-                    R.style.AppTheme_DarkText : R.style.AppTheme;
+            if (wallpaperColorInfo.isDark()) {
+                return wallpaperColorInfo.supportsDarkText() ?
+                        R.style.AppTheme_Dark_DarkText : R.style.AppTheme_Dark;
+            } else {
+                return wallpaperColorInfo.supportsDarkText() ?
+                        R.style.AppTheme_DarkText : R.style.AppTheme;
+            }
         }
     }
 	

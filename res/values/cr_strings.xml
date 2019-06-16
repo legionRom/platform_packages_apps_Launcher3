@@ -243,4 +243,9 @@
     <!-- Weather -->
     <string name="show_weather_title">Weather</string>
     <string name="show_weather_summary">Display weather when available</string>
+	
+    <string name="theme_style_title">Theme style</string>
+    <string name="theme_style_auto">Wallpaper based</string>
+    <string name="theme_style_light">Light style</string>
+    <string name="theme_style_dark">Dark style</string>
 </resources>

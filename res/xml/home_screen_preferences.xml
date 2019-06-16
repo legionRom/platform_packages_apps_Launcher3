@@ -4,6 +4,14 @@
     <PreferenceCategory
         android:key="home_overall_category"
         android:title="@string/home_overall_title">
+		
+    <ListPreference
+        android:key="pref_theme_style"
+        android:title="@string/theme_style_title"
+        android:persistent="true"
+        android:entries="@array/theme_style_entries"
+        android:entryValues="@array/theme_style_values"
+        android:defaultValue="0" />
 
     <SwitchPreference
         android:key="pref_desktop_show_label"

@@ -39,6 +39,7 @@ public class SettingsHomescreen extends SettingsActivity implements PreferenceFr
 
     static final String KEY_FEED_INTEGRATION = "pref_feed_integration";
     static final String KEY_SHOW_QUICKSPACE = "pref_show_quickspace";
+    static final String PREF_THEME_STYLE_KEY = "pref_theme_style";
 
     @Override
     protected void onCreate(final Bundle bundle) {
@@ -127,6 +128,18 @@ public class SettingsHomescreen extends SettingsActivity implements PreferenceFr
                     int index = hotseatColumns.findIndexOfValue((String) newValue);
                     hotseatColumns.setSummary(hotseatColumns.getEntries()[index]);
                     LauncherAppState.getInstanceNoCreate().setNeedsRestart();
+                    return true;
+                }
+            });
+			
+	    final ListPreference mThemeStyle = (ListPreference) findPreference(PREF_THEME_STYLE_KEY);
+	    mThemeStyle.setSummary(mThemeStyle.getEntry());
+            mThemeStyle.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
+                @Override
+                public boolean onPreferenceChange(Preference preference, Object o) {
+                    String newValue = (String) o;
+                    int valueIndex = mThemeStyle.findIndexOfValue(newValue);
+                    mThemeStyle.setSummary(mThemeStyle.getEntries()[valueIndex]);
                     return true;
                 }
             });

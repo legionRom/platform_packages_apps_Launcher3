@@ -158,4 +158,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <string name="edit_drop_target_label">Редактировать</string>
     <string name="reset_icon">Сброс</string>
     <string name="ok">Ок</string>
+    <string name="theme_style_title">Тема</string>
+    <string name="theme_style_auto">На основе обоев</string>
+    <string name="theme_style_light">Светлая</string>
+    <string name="theme_style_dark">Темная</string>
 </resources>

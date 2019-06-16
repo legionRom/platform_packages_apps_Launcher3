@@ -57,7 +57,7 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.Toast;
 
-import com.android.internal.util.crdroid.Utils;
+import com.android.internal.util.beast.BeastUtils;
 
 import com.android.launcher3.Launcher.LauncherOverlay;
 import com.android.launcher3.LauncherAppWidgetHost.ProviderChangedListener;
@@ -329,11 +329,11 @@ public class Workspace extends PagedView<WorkspacePageIndicator>
                 break;
             // Sleep
             case 1:
-                Utils.switchScreenOff(getContext());
+                BeastUtils.switchScreenOff(getContext());
                 break;
             // Flashlight
             case 2:
-                Utils.toggleCameraFlash();
+                BeastUtils.toggleCameraFlash();
                 break;
         }
     }

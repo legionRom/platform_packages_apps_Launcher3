@@ -32,7 +32,7 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.SwitchPreference;
 import android.view.MenuItem;
 
-import com.android.internal.util.crdroid.Utils;
+import com.android.internal.util.beast.BeastUtils;
 import com.android.launcher3.quickspace.QuickspaceController;
 
 public class SettingsHomescreen extends SettingsActivity implements PreferenceFragment.OnPreferenceStartFragmentCallback {
@@ -84,7 +84,7 @@ public class SettingsHomescreen extends SettingsActivity implements PreferenceFr
             SwitchPreference showQuickspace = (SwitchPreference)
                     findPreference(KEY_SHOW_QUICKSPACE);
 
-            if (!Utils.isPackageInstalled(mContext, LauncherTab.SEARCH_PACKAGE)) {
+            if (!BeastUtils.isPackageInstalled(mContext, LauncherTab.SEARCH_PACKAGE)) {
                 getPreferenceScreen().removePreference(feedIntegration);
             }
 

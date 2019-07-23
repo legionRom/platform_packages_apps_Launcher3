@@ -32,7 +32,7 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.SwitchPreference;
 import android.view.MenuItem;
 
-import com.android.internal.util.aospextended.AEXUtils;
+import com.android.internal.util.legion.LegionUtils;
 
 public class Homescreen extends SettingsActivity implements PreferenceFragment.OnPreferenceStartFragmentCallback {
 
@@ -79,7 +79,7 @@ public class Homescreen extends SettingsActivity implements PreferenceFragment.O
             SwitchPreference feedIntegration = (SwitchPreference)
                     findPreference(KEY_FEED_INTEGRATION);
 
-            if (!AEXUtils.isPackageInstalled(mContext, LauncherTab.SEARCH_PACKAGE)) {
+            if (!LegionUtils.isPackageInstalled(mContext, LauncherTab.SEARCH_PACKAGE)) {
                 getPreferenceScreen().removePreference(feedIntegration);
             }
 

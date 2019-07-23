@@ -33,7 +33,7 @@ import com.android.launcher3.util.ConfigMonitor;
 import com.android.launcher3.util.Preconditions;
 import com.android.launcher3.util.SettingsObserver;
 
-import com.android.internal.util.aospextended.AEXUtils;
+import com.android.internal.util.legion.LegionUtils;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
@@ -97,7 +97,7 @@ public class LauncherAppState {
         Preconditions.assertUIThread();
         mContext = context;
 
-        setSearchAppAvailable(AEXUtils.isPackageInstalled(context, LauncherTab.SEARCH_PACKAGE));
+        setSearchAppAvailable(LegionUtils.isPackageInstalled(context, LauncherTab.SEARCH_PACKAGE));
 
         mInvariantDeviceProfile = new InvariantDeviceProfile(mContext);
         mIconCache = new IconCache(mContext, mInvariantDeviceProfile);

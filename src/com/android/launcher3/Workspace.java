@@ -343,19 +343,19 @@ public class Workspace extends PagedView<WorkspacePageIndicator>
                 launchGoogleSearch(getContext());
                 break;
             case 4: // Volume panel
-                AEXUtils.toggleVolumePanel(getContext());
+                LegionUtils.toggleVolumePanel(getContext());
                 break;
             case 5: // Clear notifications
-                AEXUtils.clearAllNotifications();
+                LegionUtils.clearAllNotifications();
                 break;
             case 6: // Screenshot
-                AEXUtils.takeScreenshot(true);
+                LegionUtils.takeScreenshot(true);
                 break;
             case 7: // Notifications
-                AEXUtils.toggleNotifications();
+                LegionUtils.toggleNotifications();
                 break;
             case 8: // QS panel
-                AEXUtils.toggleQsPanel();
+                LegionUtils.toggleQsPanel();
                 break;
         }
     }
@@ -3562,7 +3562,7 @@ public class Workspace extends PagedView<WorkspacePageIndicator>
         launchIntent.setPackage("com.google.android.googlequicksearchbox");
         launchIntent.setClassName("com.google.android.googlequicksearchbox",
                 "com.google.android.googlequicksearchbox.SearchActivity");
-        if (AEXUtils.isPackageInstalled(context,
+        if (LegionUtils.isPackageInstalled(context,
                 "com.google.android.googlequicksearchbox")) {
             context.startActivity(launchIntent);
         } else {

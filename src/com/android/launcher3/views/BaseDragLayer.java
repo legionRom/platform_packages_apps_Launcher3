@@ -16,6 +16,7 @@
 
 package com.android.launcher3.views;
 
+import static com.android.launcher3.Utilities.SINGLE_FRAME_MS;
 import static android.view.MotionEvent.ACTION_CANCEL;
 import static android.view.MotionEvent.ACTION_DOWN;
 import static android.view.MotionEvent.ACTION_UP;
@@ -218,11 +219,13 @@ public abstract class BaseDragLayer<T extends Context & ActivityContext>
         if (child instanceof AbstractFloatingView) {
             // Handles the case where the view is removed without being properly closed.
             // This can happen if something goes wrong during a state change/transition.
+	    postDelayed(() -> {
             AbstractFloatingView floatingView = (AbstractFloatingView) child;
-            if (floatingView.isOpen()) {
-                postDelayed(() -> floatingView.close(false), SINGLE_FRAME_MS);
+           if (floatingView.isOpen()) {
+		floatingView.close(false);
             }
-        }
+        }, SINGLE_FRAME_MS);
+	}
     }
 
     @Override

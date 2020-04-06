@@ -171,10 +171,8 @@ public abstract class BaseDragLayer<T extends Context & ActivityContext>
             // Only look for controllers if we are not dispatching from gesture area and proxy is
             // not active
             mActiveController = findControllerToHandleTouch(ev);
-
-            if (mActiveController != null) return true;
         }
-        return false;
+        return mActiveController != null;
     }
 
     @Override
@@ -468,7 +466,7 @@ public abstract class BaseDragLayer<T extends Context & ActivityContext>
     }
 
     public void dump(String prefix, PrintWriter writer) {
-        writer.println(prefix + "DragLayer");
+        writer.println(prefix + "DragLayer:");
         if (mActiveController != null) {
             writer.println(prefix + "\tactiveController: " + mActiveController);
             mActiveController.dump(prefix + "\t", writer);
